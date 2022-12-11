@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">  
+
+
+	<bean name="emp1" class="com.springCore.collections.Emp">
+		<property name="name" value="Saurave Bhardwaj" />
+		<property name="phones">
+			<list>
+				<value>123457890</value>
+				<value>87654321</value>
+				<value>3456789543</value>
+			</list>
+		</property>
+		<property name="addresses">
+			<set>
+				<value>Delhi</value>
+				<value>Mathura</value>
+				<value>Airakhera</value>
+			</set>
+		</property>
+		
+		<property name="courses">
+			<map>
+				<entry key="java" value="2Months"/>
+				<entry key="python" value="1Months"/>
+				<entry key="javaScript" value="1.5Months"/>
+			</map>
+		</property>
+		
+		<property name="props">
+			<props>
+				<prop key="Name">Mohit Bhardwaj</prop>
+				<prop key="class">12th</prop>
+				<prop key="stream">Mathmatics</prop>
+				<prop key="course">Intermediate</prop>
+			</props>
+		
+		</property>
+	
+	</bean>  
+</beans>

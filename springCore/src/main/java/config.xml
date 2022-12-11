@@ -7,7 +7,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">  
 
-	<!-- this is our beans -->
+<!-- this is our beans 
+	 the values are injecting by setter method
+	 here we are using value as a Element	
+-->
 	<bean class="com.springCore.Student" name="student1">
 		<property name="studentId">
 			<value>100</value>
@@ -22,18 +25,18 @@
 		</property>
 	</bean>    
 	
+	
+<!--	Now we will use values as a Attribute not a tag  -->
 	<bean class="com.springCore.Student" name="student2">
-		<property name="studentId">
-			<value>101</value>
-		</property>
+	
+		<property name="studentId" value="101"/>
+		<property name="studentName" value="Monu Verma"/>
+		<property name="studentAddress" value="Kotdwar"/>
 		
-		<property name="studentName">
-			<value>Monu verma</value>
-		</property>
-		
-		<property name="studentAddress">
-			<value>kotdwar</value>
-		</property>
 	</bean> 
+	
+<!--	Now we'll give the values using P Schema  -->
+	<bean class="com.springCore.Student" name="student3" 
+	p:studentId="102" p:studentName="mukul joshi" p:studentAddress="kotdwar" />
     
 </beans>

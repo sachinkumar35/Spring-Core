@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">  
+
+
+<!-- for Certificate class  -->
+	<bean class="com.springCore.constructorInjection.Certificate" name="cer">
+		<constructor-arg value="Android using kotlin"/>
+	</bean>
+
+<!-- for Person class  -->
+	<bean class="com.springCore.constructorInjection.Person" name="person">
+		<constructor-arg value="Sachin Bhardwaj" />
+		<constructor-arg value="1001"/>
+		<constructor-arg ref="cer"/>
+		
+		
+	</bean>
+	
+	
+<!--HERE WE USE C SCHEMA  -->
+	<bean class="com.springCore.constructorInjection.Certificate" name="cer1" c:name="Python programming language" />
+	
+	<bean class="com.springCore.constructorInjection.Person" name="person1" c:name="Sachin Bhardwaj" c:personId="10000" c:certi-ref="cer1">
+		
+	</bean>
+	
+	
+	
+	
+<!--HERE WE ARE WRITING THE CODE FOR ADITION CLASS  -->
+	<bean class="com.springCore.constructorInjection.Addition" name="add">
+		<constructor-arg value="12" type="int"/>
+		<constructor-arg value="30" type="int"/>
+	</bean>
+	<bean class="com.springCore.constructorInjection.Addition" name="add1">
+		<constructor-arg value="12" type="int" index="1"/>  <!--a=30 using this index-->
+		<constructor-arg value="30" type="int" index="0"/>	<!--b=12 using this index-->
+	</bean>
+   
+</beans>
