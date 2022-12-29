@@ -14,8 +14,21 @@ public class Demo {
 	@Value("#{ T(java.lang.Math).sqrt(25)}") // to get the square root of 25 
 	private double z;
 	
+	@Value("#{ T(java.lang.Math).PI }") // to get the value of e=2.718281828459045 and PI=3.141592653589793
+	private double e;
 	
+	@Value("#{ new java.lang.String('Sachin Bhardwaj') }") // to create objects in expression 
+	private String name;
 	
+	@Value("#{ 8>3 }")   // to print boolean type of value
+	private boolean isActive;
+	
+	public double getE() {
+		return e;
+	}
+	public void setE(double e) {
+		this.e = e;
+	}
 	public int getX() {
 		return x;
 	}
@@ -29,7 +42,6 @@ public class Demo {
 		this.y = y;
 	}
 	
-	
 	public double getZ() {
 		return z;
 	}
@@ -40,7 +52,8 @@ public class Demo {
 	
 	@Override
 	public String toString() {
-		return "Demo [x=" + x + ", y=" + y + ", z=" + z + "]";
+		return "Demo [x=" + x + ", y=" + y + ", z=" + z + ", e=" + e + ",\nname=" + name + ", isActive=" + isActive
+				+ "]";
 	}
 	
 	
